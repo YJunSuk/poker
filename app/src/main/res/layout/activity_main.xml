@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@id/card3" />
     <TextView
         android:id="@+id/text2"
-        android:text="없음"
+        android:text="스트레이트"
         android:textSize="40sp"
         android:textColor="@color/white"
         android:fontFamily="@font/nanumgothic"
