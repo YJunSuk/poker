@@ -4,53 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#060"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="포커족보"
+        android:textSize="40sp"
+        android:fontFamily="@font/nanumgothic"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <ImageView
         android:id="@+id/card1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@id/card3"
+        app:layout_constraintEnd_toStartOf="@id/card2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/text1" />
     <ImageView
         android:id="@+id/card2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@id/card3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/card1"
+        app:layout_constraintTop_toBottomOf="@id/text1" />
     <ImageView
         android:id="@+id/card3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@id/card4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/card2" />
     <ImageView
         android:id="@+id/card4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@id/text2"
+        app:layout_constraintEnd_toStartOf="@id/card5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/card3" />
     <ImageView
         android:id="@+id/card5"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@id/text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/card4"
+        app:layout_constraintTop_toBottomOf="@id/card3" />
+    <TextView
+        android:id="@+id/text2"
+        android:text="없음"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/nanumgothic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/text"
-        android:text="족보: "
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/card4"
         />
 
 
