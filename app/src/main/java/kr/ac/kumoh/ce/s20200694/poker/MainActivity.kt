@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         })
         main.button.setOnClickListener {
             model.shuffle()
+            model.HandRankings()
         }
 
     }

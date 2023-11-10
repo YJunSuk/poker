@@ -74,6 +74,64 @@ class PokerViewModel : ViewModel() {
         }
     }
 
+    private fun isRoyalFlush(cards: IntArray): Boolean {
+        val values = setOf(10, 11, 12, 13, 1)
+        val shape = cards[0] / 13
 
+        return cards.all{it/13 == shape && it % 13 in values}
     }
+    private fun isBackStraightFlush(cards: IntArray): Boolean {
+        val values = setOf(1, 2, 3, 4, 5)
+        val shape = cards[0] / 13
+
+        return cards.all{it/13 == shape && it % 13 in values}
+    }
+    private fun isStraightFlush(cards: IntArray): Boolean {
+        val sortCards = cards.sorted()
+
+        return (0 until 4).all{
+            (sortCards[it] + 1) % 13 == sortCards[it] % 13 && sortCards[it]/13 == sortCards[0]/13
+        }
+    }
+    private fun isFourOfAKind(cards: IntArray): Boolean {
+        return (0 until 2).any {
+            cards[it] % 13 == cards[it + 1] % 13 &&
+                    cards[it + 1] % 13 == cards[it + 2] % 13 &&
+                    cards[it + 2] % 13 == cards[it + 3] % 13 &&
+                    cards[it + 3] % 13 == cards[it + 4] % 13
+        }
+    }
+    private fun isFullHouse(cards: IntArray): Boolean {
+        //TODO: 풀하우스 함수 짜기
+        return true
+    }
+    private fun isFlush(cards: IntArray): Boolean {
+        //TODO: 플러쉬 함수 짜기
+        return true
+    }
+    private fun isMountain(cards: IntArray): Boolean {
+        //TODO: 마운틴 함수 짜기
+        return true
+    }
+    private fun isStraight(cards: IntArray): Boolean {
+        //TODO: 스트레이트 함수 짜기
+        return true
+    }
+    private fun isBackStraight(cards: IntArray): Boolean {
+        //TODO: 백스트레이트 함수 짜기
+        return true
+    }
+    private fun isThreeOfAKind(cards: IntArray): Boolean {
+        //TODO: 트리플 함수 짜기
+        return true
+    }
+    private fun isTwoPair(cards: IntArray): Boolean {
+        //TODO: 투페어 함수 짜기
+        return true
+    }
+    private fun isOnePair(cards: IntArray): Boolean {
+        //TODO: 원페어 함수 짜기
+        return true
+    }
+    
 }
