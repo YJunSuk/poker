@@ -32,10 +32,11 @@ class MainActivity : AppCompatActivity() {
             main.card3.setImageResource(res[2])
             main.card4.setImageResource(res[3])
             main.card5.setImageResource(res[4])
+            main.text1.text = model.HandRankings()
         })
         main.button.setOnClickListener {
             model.shuffle()
-            model.HandRankings()
+
         }
 
     }

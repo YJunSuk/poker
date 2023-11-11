@@ -102,36 +102,74 @@ class PokerViewModel : ViewModel() {
         }
     }
     private fun isFullHouse(cards: IntArray): Boolean {
-        //TODO: 풀하우스 함수 짜기
-        return true
+        val counts = mutableMapOf<Int, Int>()
+
+        for (card in cards) {
+            val rank = card % 13
+            counts[rank] = counts.getOrDefault(rank, 0) + 1
+        }
+
+        val threeOfAKind = counts.any { it.value == 3 }
+        val pair = counts.any { it.value == 2 }
+
+        return threeOfAKind && pair
     }
+
     private fun isFlush(cards: IntArray): Boolean {
-        //TODO: 플러쉬 함수 짜기
-        return true
+        val shape = cards[0] / 13
+        return cards.all { it / 13 == shape }
     }
+
     private fun isMountain(cards: IntArray): Boolean {
-        //TODO: 마운틴 함수 짜기
-        return true
+        // 마운틴이 10, J, Q, K, A 순서라고 가정합니다.
+        val values = setOf(10, 11, 12, 13, 1)
+        return cards.sorted().map { it % 13 }.toSet() == values
     }
+
     private fun isStraight(cards: IntArray): Boolean {
-        //TODO: 스트레이트 함수 짜기
-        return true
+        val sortedCards = cards.sorted()
+
+        return (0 until 4).all {
+            (sortedCards[it] + 1) % 13 == sortedCards[it + 1] % 13
+        }
     }
+
     private fun isBackStraight(cards: IntArray): Boolean {
-        //TODO: 백스트레이트 함수 짜기
-        return true
+        val values = setOf(1, 2, 3, 4, 5)
+        return cards.sorted().map { it % 13 }.toSet() == values
     }
+
     private fun isThreeOfAKind(cards: IntArray): Boolean {
-        //TODO: 트리플 함수 짜기
-        return true
+        val counts = mutableMapOf<Int, Int>()
+
+        for (card in cards) {
+            val rank = card % 13
+            counts[rank] = counts.getOrDefault(rank, 0) + 1
+        }
+
+        return counts.any { it.value == 3 }
     }
+
     private fun isTwoPair(cards: IntArray): Boolean {
-        //TODO: 투페어 함수 짜기
-        return true
+        val counts = mutableMapOf<Int, Int>()
+
+        for (card in cards) {
+            val rank = card % 13
+            counts[rank] = counts.getOrDefault(rank, 0) + 1
+        }
+
+        return counts.values.count { it == 2 } == 2
     }
+
     private fun isOnePair(cards: IntArray): Boolean {
-        //TODO: 원페어 함수 짜기
-        return true
+        val counts = mutableMapOf<Int, Int>()
+
+        for (card in cards) {
+            val rank = card % 13
+            counts[rank] = counts.getOrDefault(rank, 0) + 1
+        }
+
+        return counts.any { it.value == 2 }
     }
     
 }
